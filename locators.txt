@@ -1,0 +1,27 @@
+Задание 1.
+❗HTML код в презентации
+Определить локаторы:
+Нечетные - XPATH, четные - CSS :
+
+1. Выбрать (написать селектор) input типа checkbox.
+$x('//input[@type="checkbox"]')
+2. Выбрать input типа checkbox, НЕ отмеченный.
+$('input[type=checkbox]:not(enabled)')
+3. Найти все элементы с id=message или message-*.
+$x('//*[contains(@id, "message")]')
+4. Найти все элементы с id=message-*.
+document.querySelectorAll('[id*=message-]')
+5. Найти все ссылки с расширением href="...zip".
+$x('//*[contains(@href, ".zip")]')
+6. Найти все элементы с атрибутом data-action, содержащим delete в списке (через пробел).
+document.querySelectorAll('li[data-action="delete"]')
+7. Найти все элементы, у которых ЕСТЬ атрибут data-action, но он НЕ содержит delete в списке (через пробел).
+$x("//li[@data-action=not('delete')]")
+8. Выбрать все четные элементы списка #messages.
+document.querySelectorAll('li:nth-child(even)')
+9. Выбрать один элемент сразу за заголовком h3#widget-title на том же уровне вложенности.
+$x('//h3[@id="widget-title"]/following::ul')
+10. Выбрать все ссылки, следующие за заголовком h3#widget-title на том же уровне вложенности.
+document.querySelectorAll('h3 ~ a[href]')
+11. Выбрать ссылку внутри последнего элемента списка #messages.
+$x("//ul[@id='messages']/li[last()]/a")
