@@ -14,9 +14,9 @@ document.querySelectorAll('[id*=message-]')
 5. Найти все ссылки с расширением href="...zip".
 $x('//*[contains(@href, ".zip")]')
 6. Найти все элементы с атрибутом data-action, содержащим delete в списке (через пробел).
-document.querySelectorAll('li[data-action="delete"]')
+document.querySelectorAll('li[data-action*="delete"]:not([data-action*="-"])')
 7. Найти все элементы, у которых ЕСТЬ атрибут data-action, но он НЕ содержит delete в списке (через пробел).
-$x("//li[@data-action=not('delete')]")
+$x('//*[@data-action][not(contains(@data-action, " delete"))]')
 8. Выбрать все четные элементы списка #messages.
 document.querySelectorAll('li:nth-child(even)')
 9. Выбрать один элемент сразу за заголовком h3#widget-title на том же уровне вложенности.
