@@ -6,7 +6,7 @@
 1. Выбрать (написать селектор) input типа checkbox.
 $x('//input[@type="checkbox"]')
 2. Выбрать input типа checkbox, НЕ отмеченный.
-$('input[type=checkbox]:not(enabled)')
+$('input[type=checkbox]:not(:checked)')
 3. Найти все элементы с id=message или message-*.
 $x('//*[contains(@id, "message")]')
 4. Найти все элементы с id=message-*.
