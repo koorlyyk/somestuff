@@ -1,4 +1,4 @@
-td.hov:hover {background-color: indigo; color: white; font-size: 10px}
+tr:hover {background-color: indigo; color: white; font-size: 10px}
 td.color {background-color: indigo; color: white; font-size: 10px}
 span.text {color: indigo; font-size: 14px}
 .background {background-color: lightblue}
