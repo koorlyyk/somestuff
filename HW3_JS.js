@@ -44,7 +44,7 @@ function checkPalindrom(string) {
 //Задание 3. Хроники познавания Мощи Регулярных Выражений
 
 function getVowels (string) {
-    let withoutVowels = string.replace(/[аеиоуиэыaeiouy]/g, "");
-    let vowelsCount = string.length - withoutVowels.length;
-    console.log(`Количество гласных: ${vowelsCount}`);
+    let withoutConsonants = string.replace(/[^аеиоуиэыaeiouy]/g, "")
+    let vowelsCount = string.length - withoutConsonants.length
+    console.log(`Количество гласных: ${vowelsCount}`)
 }
