@@ -32,8 +32,7 @@ function getReversedString(string) {
 function checkPalindrom(string) {
     let groomedString = getGroomedString(string);
     let reversedString = getReversedString(groomedString);
-    console.log(groomedString);
-    console.log(reversedString);
+
     if (groomedString == reversedString) {
         console.log("Палиндром!");
     }
@@ -45,7 +44,7 @@ function checkPalindrom(string) {
 //Задание 3. Хроники познавания Мощи Регулярных Выражений
 
 function getVowels (string) {
-    let withoutVowels = string.replace(/[аеиоуиэыaeiouy]/g, "")
-    let vowelsCount = string.length - withoutVowels.length
-    console.log(`Количество гласных: ${vowelsCount}`)
+    let withoutVowels = string.replace(/[аеиоуиэыaeiouy]/g, "");
+    let vowelsCount = string.length - withoutVowels.length;
+    console.log(`Количество гласных: ${vowelsCount}`);
 }
