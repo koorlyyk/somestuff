@@ -61,7 +61,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://api.funtranslations.com/translate/minion",
+							"raw": "https://api.funtranslations.com/translate/mandalorian",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -70,7 +70,7 @@
 							],
 							"path": [
 								"translate",
-								"minion"
+								"mandalorian"
 							]
 						}
 					},
