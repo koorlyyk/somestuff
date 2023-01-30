@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "17e19b0d-3cd1-49ff-b1d3-55809e04ab36",
+		"name": "it-os",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19262279"
+	},
+	"item": [
+		{
+			"name": "animals",
+			"item": [
+				{
+					"name": "getFact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Facts amount equal\", function () {\r",
+									"    let actValue = pm.response.json();\r",
+									"    let expValue = pm.environment.get(\"factAmount\");\r",
+									"    pm.expect(actValue.length).to.equal(Number(expValue));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Type of animal equal\", function () {\r",
+									"    let actValue = pm.response.json();\r",
+									"    let expValue = pm.environment.get(\"animalType\");\r",
+									"    actValue.forEach(actValue => pm.expect(actValue.type).to.equal(expValue))\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{animalBaseUrl}}?animal_type={{animalType}}&amount={{factAmount}}",
+							"host": [
+								"{{animalBaseUrl}}"
+							],
+							"query": [
+								{
+									"key": "animal_type",
+									"value": "{{animalType}}"
+								},
+								{
+									"key": "amount",
+									"value": "{{factAmount}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200/201/202\", function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "animalType",
+			"value": "cat",
+			"type": "string"
+		},
+		{
+			"key": "factAmount",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
